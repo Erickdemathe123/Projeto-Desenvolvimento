@@ -36,7 +36,7 @@ Como administrador, quero gerar relatórios sobre os agendamentos realizados par
 | Permitir que os clientes cancelem ou reagendem os horários  | Must       |
 | Gerenciar a disponibilidade dos prestadores de serviço      | Should     |
 | Exibir um painel administrativo para visualização de agendamentos | Should     |
-| Integrar o sistema com o Google Calendar para sincronização | Could      |
+| Integrar o sistema com o Google Calendario para sincronização | Could      |
 | Oferecer funcionalidade de chat entre cliente e prestador   | Could      |
 | Adicionar funcionalidades de pagamento online para os serviços | Won’t      |
 
