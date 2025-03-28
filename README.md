@@ -1,4 +1,4 @@
-# Desenvolvimento Ágil - Modelo de Projeto
+# Desenvolvimento Ágil - Modelo de Projeto SCRUM
 
 ## Tema: Sistema de Agendamento
 
