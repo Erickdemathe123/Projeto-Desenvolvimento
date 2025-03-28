@@ -6,7 +6,7 @@
 
 ## 1. Problema/Objetivo
 
-O seu Sistema de Agendamento resolve o problema de facilitar o processo de agendamento de consultas, serviços em barbearias, permitindo que clientes agendem horários de forma eficiente e prática, sem a necessidade de interações manuais. O objetivo principal é automatizar o agendamento de serviços, minimizando erros, otimizar o tempo de profissionais e oferecer uma experiência mais fluida e organizada tanto para prestadores de serviços quanto para clientes.
+O Sistema de Agendamento resolve o problema de facilitar o processo de agendamento de consultas, serviços em barbearias, permitindo que clientes agendem horários de forma eficiente e prática, sem a necessidade de interações manuais. O objetivo principal é automatizar o agendamento de serviços, minimizando erros, otimizar o tempo de profissionais e oferecer uma experiência mais fluida e organizada tanto para prestadores de serviços quanto para clientes.
 ---
 
 ## 2. Levantamento de Requisitos (Histórias de Usuário)
@@ -19,9 +19,9 @@ Como cliente, quero receber lembretes de meu agendamento para não esquecer o ho
 
 Como prestador de serviço, quero visualizar todos os agendamentos do meu dia para organizar meu tempo de forma eficiente.
 
-Como administrador do sistema, quero gerenciar os horários e a disponibilidade dos prestadores para evitar conflitos de agendamentos.
+Como prestador de serviço, quero reagendar um horário do cliente.
 
-Como administrador, quero gerar relatórios sobre os agendamentos realizados para analisar a demanda e tomar decisões sobre otimização de recursos.*
+Como administrador do sistema, quero gerenciar os horários e a disponibilidade dos prestadores para evitar conflitos de agendamentos.
 
 ---
 
