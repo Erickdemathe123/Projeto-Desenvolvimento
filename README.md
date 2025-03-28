@@ -6,7 +6,7 @@
 
 ## 1. Problema/Objetivo
 
-Os problemas fazendo agendamentos de forma manual pelo telefone seria a anotação manual em uma agenda física, contendo o nome e o horário de cada cliente. O Sistema de Agendamento fará automaticamente o bloqueio de horários agendados e consequentemente o prestador terá a sua lista de agendamentos atualizada automaticamente, sem preocupações de ter que reagendar serviços.
+Os problemas fazendo agendamentos de forma manual pelo telefone são as anotações manuais em uma agenda física, contendo o nome e o horário de cada cliente, mas também, tendo o transtorno do cliente ter que ligar para reagendar e pode acabar esquecendo. O Sistema de Agendamento fará automaticamente o bloqueio de horários agendados e consequentemente o prestador terá a sua lista de agendamentos atualizada automaticamente, sem preocupações de ter que reagendar serviços. Caso o cliente esqueça de confirmar o seu agendamento, o sistema automaticamente fará o bloqueio do horário informado no agendamento.
 ---
 
 ## 2. Levantamento de Requisitos (Histórias de Usuário)
