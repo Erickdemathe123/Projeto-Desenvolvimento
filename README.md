@@ -34,10 +34,12 @@ Como administrador do sistema, quero gerenciar os horários e a disponibilidade 
 | Permitir que os clientes agendem horários                   | Must       |
 | Enviar lembretes automáticos para os clientes               | Must       |
 | Permitir que os clientes cancelem ou reagendem os horários  | Must       |
+| Permitir que o prestador cancele ou reagendem os horários de seus clientes  | Must       |
 | Gerenciar a disponibilidade dos prestadores de serviço      | Should     |
-| Exibir um painel administrativo para visualização de agendamentos | Should     |
+| Exibir um painel para visualização de agendamentos | Should     |
 | Integrar o sistema com o Google Calendario para sincronização | Could      |
 | Oferecer funcionalidade de chat entre cliente e prestador   | Could      |
+| Oferecer funcionalidade de regras de bloqueio de agendas ao prestador   | Could      |
 | Adicionar funcionalidades de pagamento online para os serviços | Won’t      |
 
 ---
