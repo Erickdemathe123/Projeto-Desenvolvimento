@@ -46,19 +46,19 @@ Como administrador do sistema, quero gerenciar os horários e a disponibilidade 
 
 ## 4. Definição do MVP (Produto Mínimo Viável)
 
-Cadastro de clientes – Permitir que os clientes se cadastrem para realizar agendamentos.
+Cadastro de clientes – Permitir que os clientes se cadastrem para realizar agendamentos. (Dificuldade 4)
 
-Agendamento de horários – Permitir que os clientes escolham o horário e serviço desejado para agendar.
+Agendamento de horários – Permitir que os clientes escolham o horário e serviço desejado para agendar. (Dificuldade 5)
 
-Visualização de agendamentos – Permitir que o prestador de serviço visualize seus agendamentos diários.
+Visualização de agendamentos – Permitir que o prestador de serviço visualize seus agendamentos diários. (Dificuldade 2)
 
-Cancelamento e reagendamento de horários – Permitir que os clientes possam cancelar ou reagendar seus horários.
+Cancelamento e reagendamento de horários – Permitir que os clientes possam cancelar ou reagendar seus horários. (Dificuldade 2)
 
-Envio de lembretes – Enviar lembretes automáticos para os clientes sobre seus agendamentos.
+Envio de lembretes – Enviar lembretes automáticos para os clientes sobre seus agendamentos. (Dificuldade 21)
 
-Gerenciamento de disponibilidade dos prestadores – Permitir que os prestadores definam suas disponibilidades de horários.
+Gerenciamento de disponibilidade dos prestadores – Permitir que os prestadores definam suas disponibilidades de horários. (Dificuldade 13)
 
-Interface simples e funcional – Criar uma interface básica, mas intuitiva, para facilitar o uso tanto por clientes quanto prestadores.
+Interface simples e funcional – Criar uma interface básica, mas intuitiva, para facilitar o uso tanto por clientes quanto prestadores. (Dificuldade 2)
 ---
 
 ## 5. Organização das Entregas por Sprint
