@@ -11,17 +11,17 @@ Os problemas fazendo agendamentos de forma manual pelo telefone são as anotaç�
 
 ## 2. Levantamento de Requisitos (Histórias de Usuário)
 
-Como cliente, quero agendar um horário para consulta ou serviço para garantir que receberei atendimento no horário desejado.
+Como cliente, quero fazer meu cadastro no sistema.
 
-Como cliente, quero cancelar ou reagendar um horário para ajustar minha agenda sem complicações.
+Como cliente, preciso marcar na agenda um horário para os serviços da barbearia.
 
-Como cliente, quero receber lembretes de meu agendamento para não esquecer o horário marcado.
+Sou barbeiro e meus clientes possuem horários marcados comigo, quero ver esses horários agendados.
 
-Como prestador de serviço, quero visualizar todos os agendamentos do meu dia para organizar meu tempo de forma eficiente.
+Como cliente, quero a permissão de reagendar ou cancelar os meus horários que foram marcados.
 
-Como prestador de serviço, quero reagendar um horário do cliente.
+Como cliente quero lembrar do meu compromisso na barbearia e preciso de um alerta.
 
-Como administrador do sistema, quero gerenciar os horários e a disponibilidade dos prestadores para evitar conflitos de agendamentos.
+Sou barbeiro e tenho horários específicos de trabalho, preciso ajustar minha agenda para marcarem os horários dentro do meu prazo estabelecido.
 
 ---
 
