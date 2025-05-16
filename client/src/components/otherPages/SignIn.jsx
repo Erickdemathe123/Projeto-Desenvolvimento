@@ -185,12 +185,6 @@ export default function SignIn() {
                       <h1 className="h4 sm:h2">Sign in</h1>
                       <div className="hstack gap-2">
                         <a
-                          href="#github"
-                          className="hstack items-center justify-center flex-1 gap-1 h-48px text-none rounded bg-dark text-white dark:bg-white dark:text-dark"
-                        >
-                          <i className="icon icon-1 unicon-logo-github" />
-                        </a>
-                        <a
                           href="#facebook"
                           className="hstack items-center justify-center flex-1 gap-1 h-48px text-none rounded bg-blue-600 text-white"
                         >
