@@ -1,5 +1,3 @@
-// require('./src/crons/cron');
-
 const express = require("express");
 const cors = require("cors");
 const bodyParser = require("body-parser");
@@ -15,7 +13,7 @@ server.setTimeout(1000000);
 const router = express.Router();
 router.use(bodyParser.json());
 
-const allowedOrigin = 'http://localhost:3000';
+const allowedOrigin = 'http://localhost:3002';
 
 const corsOptions = {
     origin: allowedOrigin,

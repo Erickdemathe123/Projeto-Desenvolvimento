@@ -1,10 +1,55 @@
 "use client";
-import { useState } from "react";
+import { useState, useCallback } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { register as registerUser } from "@/api/auth/register";
 
 export default function Signup() {
   const [showPassword, setShowPassword] = useState(false);
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState("");
+  const [success, setSuccess] = useState(false);
+
+  const resetForm = () => {
+    setName("");
+    setEmail("");
+    setPassword("");
+  };
+
+  const handleSubmit = useCallback(
+    async (e) => {
+      e.preventDefault();
+      if (loading) {
+        return;
+      }
+      setError("");
+      setSuccess(false);
+      setLoading(true);
+      try {
+        const result = await registerUser({ name, email, password });
+        if (result.success) {
+          setSuccess(true);
+          resetForm();
+          return;
+        }
+        setError("Erro desconhecido.");
+      } catch (err) {
+        setError(err.message);
+      } finally {
+        setLoading(false);
+      }
+    },
+    [loading, name, email, password]
+  );
+
+  const togglePassword = () => {
+    setShowPassword((prev) => {
+      return !prev;
+    });
+  };
 
   return (
     <div
@@ -197,14 +242,15 @@ export default function Signup() {
                         </span>
                       </div>
 
-                      <form
-                        onSubmit={(e) => e.preventDefault()}
-                        className="vstack gap-2"
-                      >
+                      <form onSubmit={handleSubmit} className="vstack gap-2">
                         <input
                           className="form-control h-48px w-full bg-white dark:bg-opacity-0 dark:text-white dark:border-gray-300 dark:border-opacity-30"
                           type="text"
                           placeholder="Nome completo"
+                          value={name}
+                          onChange={(e) => {
+                            setName(e.target.value);
+                          }}
                           required
                         />
 
@@ -212,6 +258,10 @@ export default function Signup() {
                           className="form-control h-48px w-full bg-white dark:bg-opacity-0 dark:text-white dark:border-gray-300 dark:border-opacity-30"
                           type="email"
                           placeholder="Seu e-mail"
+                          value={email}
+                          onChange={(e) => {
+                            setEmail(e.target.value);
+                          }}
                           required
                         />
 
@@ -222,13 +272,17 @@ export default function Signup() {
                             placeholder="Senha forte"
                             pattern="(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[!@#$%^&*()\\-_=+{};:,<.>]).{8,}"
                             title="A senha deve ter pelo menos 8 caracteres, incluindo maiúsculas, minúsculas, números e símbolos."
+                            value={password}
+                            onChange={(e) => {
+                              setPassword(e.target.value);
+                            }}
                             required
                           />
                           <i
                             className={`position-absolute top-50 end-0 translate-middle-y p-2 cursor-pointer icon icon-1 ${
                               showPassword ? "unicon-eye-slash" : "unicon-eye"
                             }`}
-                            onClick={() => setShowPassword(!showPassword)}
+                            onClick={togglePassword}
                           />
                         </div>
 
@@ -259,9 +313,18 @@ export default function Signup() {
                         <button
                           className="btn btn-primary btn-md text-white mt-2"
                           type="submit"
+                          disabled={loading}
                         >
-                          Criar minha conta
+                          {loading ? "Enviando…" : "Criar minha conta"}
                         </button>
+
+                        {error && <p className="text-danger mt-1">{error}</p>}
+
+                        {success && (
+                          <p className="text-success mt-1">
+                            Conta criada com sucesso! Faça login.
+                          </p>
+                        )}
                       </form>
 
                       <p>
