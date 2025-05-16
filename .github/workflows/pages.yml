@@ -20,4 +20,8 @@ jobs:
       - run: npm run build --prefix client
         env:
           NEXT_PUBLIC_API_URL: ${{ secrets.NEXT_PUBLIC_API_URL }}
-      - run: npx gh-pages -d client/out -b gh-pages --repo https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git
+      - uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: client/out
+          publish_branch: gh-pages
