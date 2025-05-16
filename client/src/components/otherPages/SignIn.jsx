@@ -21,7 +21,7 @@ export default function SignIn() {
                     <canvas className="h-100 w-100" />
                     <Image
                       className="media-cover image"
-                      alt="Hero login image"
+                      alt="Imagem de login"
                       src="/assets/images/common/login.webp"
                       width="1500"
                       height="1000"
@@ -35,16 +35,15 @@ export default function SignIn() {
                         data-anime="targets: >*; translateY: [-24, 0]; opacity: [0, 1]; easing: easeInOutExpo; duration: 750; delay: anime.stagger(100, {start: 250});"
                       >
                         <p className="fs-5 xl:fs-4 fw-medium">
-                          “This software simplifies the website building
-                          process, making it a breeze to manage our online
-                          presence.”
+                          “Este aplicativo facilita o agendamento de serviços,
+                          tornando a gestão da barbearia muito mais simples.”
                         </p>
                         <div className="vstack gap-0">
                           <p className="fs-6 lg:fs-5 fw-medium">
-                            David Handerson
+                            Carlos Silva
                           </p>
                           <span className="fs-7 opacity-80">
-                            Founder &amp; CEO
+                            Barbeiro Chefe
                           </span>
                         </div>
                       </div>
@@ -82,7 +81,7 @@ export default function SignIn() {
                         className="w-32px text-gray-900 dark:text-white"
                         width={193}
                         height={216}
-                        alt="star-1"
+                        alt="estrela-1"
                         data-uc-svg=""
                         src="/assets/images/template/star-1.svg"
                       />
@@ -95,7 +94,7 @@ export default function SignIn() {
                         className="w-24px text-gray-900 dark:text-white"
                         width={69}
                         height={95}
-                        alt="star-2"
+                        alt="estrela-2"
                         data-uc-svg=""
                         src="/assets/images/template/star-2.svg"
                       />
@@ -106,14 +105,14 @@ export default function SignIn() {
                     >
                       <Image
                         className="w-64px d-block dark:d-none"
-                        alt="icon-internet"
+                        alt="ícone-internet"
                         src="/assets/images/template/icon-internet.svg"
                         width="100"
                         height="100"
                       />
                       <Image
                         className="w-64px d-none dark:d-block"
-                        alt="icon-internet-dark"
+                        alt="ícone-internet-escuro"
                         src="/assets/images/template/icon-internet-dark.svg"
                         width="100"
                         height="100"
@@ -125,14 +124,14 @@ export default function SignIn() {
                     >
                       <Image
                         className="w-64px d-block dark:d-none"
-                        alt="icon-globe"
+                        alt="ícone-globo"
                         src="/assets/images/template/icon-globe.svg"
                         width="100"
                         height="100"
                       />
                       <Image
                         className="w-64px d-none dark:d-block"
-                        alt="icon-globe-dark"
+                        alt="ícone-globo-escuro"
                         src="/assets/images/template/icon-globe-dark.svg"
                         width="100"
                         height="100"
@@ -144,14 +143,14 @@ export default function SignIn() {
                     >
                       <Image
                         className="w-64px d-block dark:d-none"
-                        alt="icon-diamond"
+                        alt="ícone-diamante"
                         src="/assets/images/template/icon-diamond.svg"
                         width="100"
                         height="100"
                       />
                       <Image
                         className="w-64px d-none dark:d-block"
-                        alt="icon-diamond-dark"
+                        alt="ícone-diamante-escuro"
                         src="/assets/images/template/icon-diamond-dark.svg"
                         width="100"
                         height="100"
@@ -163,14 +162,14 @@ export default function SignIn() {
                     >
                       <Image
                         className="w-64px d-block dark:d-none"
-                        alt="icon-community"
+                        alt="ícone-comunidade"
                         src="/assets/images/template/icon-community.svg"
                         width="101"
                         height="87"
                       />
                       <Image
                         className="w-64px d-none dark:d-block"
-                        alt="icon-community-dark"
+                        alt="ícone-comunidade-escuro"
                         src="/assets/images/template/icon-community-dark.svg"
                         width="100"
                         height="100"
@@ -182,7 +181,7 @@ export default function SignIn() {
                       className="panel vstack gap-3 w-100 sm:w-350px mx-auto text-center"
                       data-anime="targets: >*; translateY: [24, 0]; opacity: [0, 1]; easing: easeInOutExpo; duration: 750; delay: anime.stagger(100);"
                     >
-                      <h1 className="h4 sm:h2">Sign in</h1>
+                      <h1 className="h4 sm:h2">Entrar</h1>
                       <div className="hstack gap-2">
                         <a
                           href="#facebook"
@@ -194,7 +193,7 @@ export default function SignIn() {
                       <div className="panel my-2">
                         <hr className="m-0" />
                         <span className="position-absolute top-50 start-50 translate-middle p-1 fs-7 text-uppercase bg-secondary dark:bg-gray-900">
-                          Or
+                          Ou
                         </span>
                       </div>
                       <form
@@ -204,13 +203,13 @@ export default function SignIn() {
                         <input
                           className="form-control h-48px w-full bg-white dark:bg-opacity-0 dark:text-white dark:border-gray-300 dark:border-opacity-30"
                           type="email"
-                          placeholder="Your email"
+                          placeholder="Seu e-mail"
                           required
                         />
                         <input
                           className="form-control h-48px w-full bg-white dark:bg-opacity-0 dark:text-white dark:border-gray-300 dark:border-opacity-30"
                           type="password"
-                          placeholder="Password"
+                          placeholder="Senha"
                           required
                         />
                         <div className="hstack justify-between text-start">
@@ -224,24 +223,24 @@ export default function SignIn() {
                               htmlFor="uc_form_remember_me"
                               className="hstack justify-between form-check-label fs-6"
                             >
-                              Remember me?
+                              Lembrar-me
                             </label>
                           </div>
                           <Link href={`/reset-password`} className="uc-link">
-                            Forgot password
+                            Esqueceu a senha
                           </Link>
                         </div>
                         <button
                           className="btn btn-primary btn-md text-white mt-2"
                           type="submit"
                         >
-                          Log in
+                          Entrar
                         </button>
                       </form>
                       <p>
-                        Have no account yet?
+                        Ainda não tem conta? {' '}
                         <Link className="uc-link" href={`/sign-up`}>
-                          Sign up
+                          Cadastrar
                         </Link>
                       </p>
                     </div>
