@@ -2,9 +2,9 @@ import Signup from "@/components/otherPages/Signup";
 
 export const metadata = {
   title:
-    "Signup 1 || Lexend - Full-featured, professional-looking software, saas and startup nextjs template.",
+    "Signup",
   description:
-    "Lexend - Full-featured, professional-looking software, saas and startup nextjs template.",
+    "Cadastro.",
 };
 export default function SignupPage1() {
   return (
