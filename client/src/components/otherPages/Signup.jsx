@@ -1,7 +1,11 @@
 "use client";
+import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
+
 export default function Signup() {
+  const [showPassword, setShowPassword] = useState(false);
+
   return (
     <div
       id="sign-in"
@@ -38,9 +42,7 @@ export default function Signup() {
                           tornando a gestão da barbearia muito mais simples.”
                         </p>
                         <div className="vstack gap-0">
-                          <p className="fs-6 lg:fs-5 fw-medium">
-                            Carlos Silva
-                          </p>
+                          <p className="fs-6 lg:fs-5 fw-medium">Carlos Silva</p>
                           <span className="fs-7 opacity-80">
                             Barbeiro Chefe
                           </span>
@@ -63,6 +65,7 @@ export default function Signup() {
                   </Link>
                 </div>
               </div>
+
               <div>
                 <div className="panel vstack justify-center h-100 overflow-hidden">
                   <div
@@ -71,22 +74,18 @@ export default function Signup() {
                   >
                     <div
                       className="position-absolute rotate-45"
-                      style={{
-                        bottom: "15%",
-                        left: "18%",
-                      }}
+                      style={{ bottom: "15%", left: "18%" }}
                     >
                       <Image
                         className="w-32px text-gray-900 dark:text-white"
                         width={193}
                         height={216}
                         alt="estrela-1"
-                        data-uc-svg=""
                         src="/assets/images/template/star-1.svg"
                       />
                     </div>
                     <div
-                      className="position-absolute  rotate-45"
+                      className="position-absolute rotate-45"
                       style={{ top: "15%", right: "18%" }}
                     >
                       <Image
@@ -94,7 +93,6 @@ export default function Signup() {
                         width={69}
                         height={95}
                         alt="estrela-2"
-                        data-uc-svg=""
                         src="/assets/images/template/star-2.svg"
                       />
                     </div>
@@ -175,12 +173,14 @@ export default function Signup() {
                       />
                     </div>
                   </div>
+
                   <div className="panel py-4 px-2">
                     <div
                       className="panel vstack gap-3 w-100 sm:w-350px mx-auto text-center"
                       data-anime="targets: >*; translateY: [24, 0]; opacity: [0, 1]; easing: easeInOutExpo; duration: 750; delay: anime.stagger(100);"
                     >
                       <h1 className="h4 sm:h2">Crie uma conta</h1>
+
                       <div className="hstack gap-2">
                         <a
                           href="#facebook"
@@ -189,22 +189,49 @@ export default function Signup() {
                           <i className="icon icon-1 unicon-logo-facebook" />
                         </a>
                       </div>
+
                       <div className="panel my-2">
                         <hr className="m-0" />
                         <span className="position-absolute top-50 start-50 translate-middle p-1 fs-7 text-uppercase bg-secondary dark:bg-gray-900">
                           Ou
                         </span>
                       </div>
+
                       <form
                         onSubmit={(e) => e.preventDefault()}
                         className="vstack gap-2"
                       >
                         <input
                           className="form-control h-48px w-full bg-white dark:bg-opacity-0 dark:text-white dark:border-gray-300 dark:border-opacity-30"
+                          type="text"
+                          placeholder="Nome completo"
+                          required
+                        />
+
+                        <input
+                          className="form-control h-48px w-full bg-white dark:bg-opacity-0 dark:text-white dark:border-gray-300 dark:border-opacity-30"
                           type="email"
                           placeholder="Seu e-mail"
                           required
                         />
+
+                        <div className="position-relative">
+                          <input
+                            className="form-control h-48px w-full bg-white dark:bg-opacity-0 dark:text-white dark:border-gray-300 dark:border-opacity-30 pe-5"
+                            type={showPassword ? "text" : "password"}
+                            placeholder="Senha forte"
+                            pattern="(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[!@#$%^&*()\\-_=+{};:,<.>]).{8,}"
+                            title="A senha deve ter pelo menos 8 caracteres, incluindo maiúsculas, minúsculas, números e símbolos."
+                            required
+                          />
+                          <i
+                            className={`position-absolute top-50 end-0 translate-middle-y p-2 cursor-pointer icon icon-1 ${
+                              showPassword ? "unicon-eye-slash" : "unicon-eye"
+                            }`}
+                            onClick={() => setShowPassword(!showPassword)}
+                          />
+                        </div>
+
                         <div className="hstack text-start">
                           <div className="form-check text-start rtl:text-end">
                             <input
@@ -217,7 +244,7 @@ export default function Signup() {
                               htmlFor="uc_form_check_terms"
                               className="hstack justify-between form-check-label fs-6"
                             >
-                              Eu li e aceito os
+                              Eu li e aceito os{" "}
                               <Link
                                 href={`/page-terms`}
                                 className="uc-link ltr:ms-narrow rtl:me-narrow"
@@ -228,6 +255,7 @@ export default function Signup() {
                             </label>
                           </div>
                         </div>
+
                         <button
                           className="btn btn-primary btn-md text-white mt-2"
                           type="submit"
@@ -235,8 +263,9 @@ export default function Signup() {
                           Criar minha conta
                         </button>
                       </form>
+
                       <p>
-                        Já possui uma conta? {' '}
+                        Já possui uma conta?{" "}
                         <Link className="uc-link" href={`/sign-in`}>
                           Entrar
                         </Link>
