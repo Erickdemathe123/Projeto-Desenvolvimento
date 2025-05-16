@@ -1,4 +1,4 @@
-const repo = 'my-next-client';
+const repo = 'Projeto-Desenvolvimento';
 
 export default {
   output: 'export',
