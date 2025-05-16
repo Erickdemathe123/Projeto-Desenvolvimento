@@ -1,9 +1,8 @@
-/** @type {import('next').NextConfig} */
-const nextConfig = {
-    images: {
-      unoptimized: true,
-    },
-  };
-  
-  export default nextConfig;
-  
+const repo = 'my-next-client';
+
+export default {
+  output: 'export',
+  basePath: process.env.GITHUB_ACTIONS ? `/${repo}` : '',
+  assetPrefix: process.env.GITHUB_ACTIONS ? `/${repo}/` : '',
+  images: { unoptimized: true }
+};
