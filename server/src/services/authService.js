@@ -1,74 +1,48 @@
-const helper = require("../helper/helper");
-const crud = require("../crud/crud");
-const { v4: uuidv4 } = require('uuid');
+const bcrypt = require('bcrypt');
+const jwt = require('jsonwebtoken');
+const { User } = require('../models');
 
-const globalUser = { id: -1 };
+const JWT_SECRET = process.env.JWT_SECRET || 'dev-only-secret';
 
-async function registerUser({ username, password }) {
-    try {
-        helper.ensureSignUpArguments(username, password);
-
-        await helper.checkUserExistence(globalUser, "Username", username);
-
-        const hashed = await helper.createNewPassword(password);
-
-        const newUser = await crud.create(globalUser, "Users", {
-            Username: username,
-            Password: hashed,
-            Namespace: uuidv4(),
-            Deleted: false,
-            Plan: "FREE",
-        });
-
-        if (newUser.Error) {
-            throw new Error(newUser.Errormessage || "Failed to create user.");
-        }
-
-        const token = helper.createJWT(newUser);
-
-        return { success: true, token };
-    } catch (error) {
-        return { success: false, message: error.message };
+async function registerUser({ name, email, password }) {
+  try {
+    const exists = await User.findOne({ where: { email } });
+    if (exists) {
+      return { success: false, message: 'E-mail already registered.' };
     }
+
+    const user = await User.create({ name, email, password });
+
+    return { success: true, user: user.toSafeJSON() };
+  } catch (error) {
+    return { success: false, message: error.message };
+  }
 }
 
-async function loginUser({ username, password }) {
-    try {
-        if (!username || !password) {
-            throw new Error("Username/password missing.");
-        }
-
-        const usersFound = await helper.getUserFromDatabase(globalUser, "Username", username);
-
-        if (!usersFound.length) {
-            throw new Error("Invalid credentials.");
-        }
-
-        const user = usersFound[0];
-        const validPass = await helper.comparePassword(password, user.Password);
-
-        if (!validPass) {
-            throw new Error("Invalid credentials.");
-        }
-
-        const token = helper.createJWT(user);
-
-        return { success: true, token };
-    } catch (error) {
-        return { success: false, message: error.message };
+async function loginUser({ email, password }) {
+  try {
+    const user = await User.findOne({ where: { email } });
+    if (!user) {
+      return { success: false, message: 'Invalid credentials.' };
     }
-}
 
-function guestAccess() {
-    const token = helper.createJWT({ guest: true });
+    const valid = await bcrypt.compare(password, user.password);
+
+    if (!valid) {
+      return { success: false, message: 'Invalid credentials.' };
+    }
+
+    const token = jwt.sign(
+      { id: user.id, email: user.email },
+      JWT_SECRET,
+      { expiresIn: '1h' }
+    );
 
     return { success: true, token };
+  } catch (error) {
+    return { success: false, message: error.message };
+  }
 }
 
-function checkAuth(token) {
-    const userData = helper.verifyJWT(token);
+module.exports = { registerUser, loginUser };
 
-    return userData;
-}
-
-module.exports = { registerUser, loginUser, guestAccess, checkAuth, };

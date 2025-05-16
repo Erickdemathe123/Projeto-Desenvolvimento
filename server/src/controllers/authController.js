@@ -1,25 +1,11 @@
-const { registerUser, loginUser, guestAccess } = require("../services/authService");
-const jwtInB64 = "anNvbndlYnRva2Vu";
+const { registerUser, loginUser } = require('../services/authService');
 
 async function registerController(req, res) {
     try {
-        const { username, password } = req.body;
-        const result = await registerUser({ username, password });
+        const { name, email, password } = req.body;
+        const result = await registerUser({ name, email, password });
 
-        if (!result.success) {
-            return res.status(400).json(result);
-        }
-
-        if (result.token) {
-            res.cookie(jwtInB64, result.token, {
-                httpOnly: true,
-                secure: false,
-                maxAge: 3600000,
-                sameSite: 'strict'
-            });
-        }
-
-        return res.json(result);
+        return result.success ? res.status(201).json(result) : res.status(400).json(result);
     } catch (err) {
         return res.status(500).json({ success: false, message: err.message });
     }
@@ -27,49 +13,14 @@ async function registerController(req, res) {
 
 async function loginController(req, res) {
     try {
-        const { username, password } = req.body;
-        const result = await loginUser({ username, password });
+        const { email, password } = req.body;
+        const result = await loginUser({ email, password });
 
-        if (!result.success) {
-            return res.status(401).json(result);
-        }
-
-        if (result.token) {
-            res.cookie(jwtInB64, result.token, {
-                httpOnly: true,
-                secure: false,
-                maxAge: 3600000,
-                sameSite: 'strict'
-            });
-        }
-
-        return res.json(result);
+        return result.success ? res.json(result) : res.status(401).json(result);
     } catch (err) {
         return res.status(500).json({ success: false, message: err.message });
     }
 }
 
-function guestController(req, res) {
-    try {
-        const result = guestAccess();
+module.exports = { registerController, loginController };
 
-        if (result.token) {
-            res.cookie(jwtInB64, result.token, {
-                httpOnly: true,
-                secure: false,
-                maxAge: 3600000,
-                sameSite: 'strict'
-            });
-        }
-
-        return res.json(result);
-    } catch (err) {
-        return res.status(500).json({ success: false, message: err.message });
-    }
-}
-
-module.exports = {
-    registerController,
-    loginController,
-    guestController,
-};
