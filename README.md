@@ -64,16 +64,16 @@ Interface simples e funcional – Criar uma interface básica, mas intuitiva, pa
 ## 5. Organização das Entregas por Sprint
 
 ### Sprint 1
-- [Funcionalidade 1]
-- [Funcionalidade 2]
+Setup do projeto
+Login funcional
 
 ### Sprint 2
-- [Funcionalidade 3]
-- [Funcionalidade 4]
+Criar tela e funcionalidade de cadastro de clientes
+Começar o layout da interface (menu, navegação)
 
 ### Sprint 3
-- [Funcionalidade 5]
-- [Funcionalidade 6]
+Finalizar cadastro de clientes (caso pendente)
+Implementar agendamento de horários (parte do fluxo)
 
 *(Adicione mais sprints conforme necessário)*
 
