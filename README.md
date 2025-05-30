@@ -65,15 +65,18 @@ Interface simples e funcional – Criar uma interface básica, mas intuitiva, pa
 
 ### Sprint 1
 Setup do projeto
+
 Login funcional
 
 ### Sprint 2
 Criar tela e funcionalidade de cadastro de clientes
+
 Começar o layout da interface (menu, navegação)
 
 ### Sprint 3
-Finalizar cadastro de clientes (caso pendente)
-Implementar agendamento de horários (parte do fluxo)
+Finalizar cadastro de clientes
+
+Implementar agendamento de horários 
 
 *(Adicione mais sprints conforme necessário)*
 
